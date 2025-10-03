@@ -1,0 +1,59 @@
+metodo a 
+
+sudo dhclient -r   # Liberar la IP actual
+
+sudo dhclient      # Solicitar una nueva IP al servidor DHCP
+
+
+
+
+Metodo B
+
+nmcli con show
+
+
+sudo nmcli con modify fb03d3f4-b58f-3138-bad4-1de5d00281d1 ipv4.method auto
+
+
+sudo nmcli con down fb03d3f4-b58f-3138-bad4-1de5d00281d1
+sudo nmcli con up fb03d3f4-b58f-3138-bad4-1de5d00281d1
+
+
+sudo nmcli con modify fb03d3f4-b58f-3138-bad4-1de5d00281d1 -ipv4.dns
+
+
+
+  
+Metodo C
+
+sudo nano /etc/network/interfaces
+
+auto eth0
+iface eth0 inet static
+  address 192.168.1.150
+  netmask 255.255.255.0
+  gateway 192.168.1.1
+  dns-nameservers 8.8.8.8 8.8.4.4
+
+sudo systemctl restart NetworkManager
+
+
+
+
+
+
+
+3 conf de dns de google
+
+sudo nano /etc/resolv.conf
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+
+sudo nmcli con modify Wired connection 1 ipv4.dns 8.8.8.8 8.8.4.4
+
+sudo nmcli con up Wired connection 1
+
+
+sudo systemd-resolve --set-dns=8.8.8.8 --set-dns=8.8.4.4 --interface=eth0
