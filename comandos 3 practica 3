@@ -1,0 +1,31 @@
+# Crear el usuario (ejemplo: jose)
+sudo adduser jose
+
+# Agregarlo al grupo sudo
+sudo usermod -aG sudo jose
+
+# Verificar que pertenece al grupo sudo
+groups jose
+
+
+Paso 2 
+# Crear el grupo guest
+sudo groupadd guest
+
+# Crear el usuario invitado
+sudo adduser invitado
+
+# Agregar el usuario invitado al grupo guest
+sudo usermod -aG guest invitado
+
+# Verificar
+groups invitado
+
+
+
+Paso 3 
+# Eliminar el usuario invitado y su carpeta personal
+sudo deluser --remove-home invitado
+
+# Eliminar el grupo guest
+sudo groupdel guest
