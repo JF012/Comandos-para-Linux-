@@ -1,7 +1,6 @@
-metodo a 
+metodo A
 
 sudo dhclient -r   # Liberar la IP actual
-
 sudo dhclient      # Solicitar una nueva IP al servidor DHCP
 
 
@@ -11,13 +10,10 @@ Metodo B
 
 nmcli con show
 
-
 sudo nmcli con modify fb03d3f4-b58f-3138-bad4-1de5d00281d1 ipv4.method auto
-
 
 sudo nmcli con down fb03d3f4-b58f-3138-bad4-1de5d00281d1
 sudo nmcli con up fb03d3f4-b58f-3138-bad4-1de5d00281d1
-
 
 sudo nmcli con modify fb03d3f4-b58f-3138-bad4-1de5d00281d1 -ipv4.dns
 
@@ -43,7 +39,7 @@ sudo systemctl restart NetworkManager
 
 
 
-3 conf de dns de google
+Paso 3 conf de dns de google
 
 sudo nano /etc/resolv.conf
 
