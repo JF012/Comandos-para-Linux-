@@ -1,0 +1,67 @@
+# Crear la carpeta y entrar en ella
+mkdir -p materia
+cd materia
+
+# Crear/abrir el archivo con vi
+touch estudiante.txt
+vi estudiante.txt
+
+# Verificar si el archivo existe
+ls 
+
+# Salir del archivo 
+presionar esc y luego escribir :wq
+
+# Ver el contenido del archivo: 
+cat estudiante.txt
+
+# Permisos: solo el usuario propietario con control total
+chmod 700 estudiante.txt
+ls -l estudiante.txt
+# Espera ver algo como: -rwx------ 1 tu_usuario tu_grupo ... estudiante.txt
+
+r = read
+w = write
+x = execute
+
+
+# Permisos: solo el grupo propietario con control total
+chmod 070 estudiante.txt
+ls -l estudiante.txt
+# Debe verse: ---rwx--- 1 tu_usuario tu_grupo ... estudiante.txt
+
+
+# 4) Crear carpeta materia2 y copiar estudiante.txt dentro
+mkdir -p materia2
+sudo su 
+cp estudiante.txt materia2/
+
+# Verifica
+cd materia2
+ls materia2
+
+
+# Eliminar la carpeta materia junto con estudiante.txt
+# -I (i mayúscula) pide confirmación si vas a borrar muchas cosas; es más seguro que -f
+rm -rI materia
+
+O
+
+rm -r materia 
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+  
