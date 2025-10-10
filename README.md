@@ -1,2 +1,2 @@
-# Comandos-para-Linux-Laboratorio 1
-Comandos de linux 
+# Comandos-para-Linux
+Comandos de linux Laboratorio 1
